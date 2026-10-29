@@ -21,10 +21,9 @@ class MainActivity : AppCompatActivity() {
             if (textToShare.isNotEmpty()) {
                 val sendIntent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, editText.text.toString())
+                    putExtra(Intent.EXTRA_TEXT, textToShare)
                     type = "text/plain"
                 }
-//                startActivity(sendIntent)
                 startActivity(Intent.createChooser(sendIntent, null))
             }
         }
